@@ -1,5 +1,4 @@
 import 'package:flame/components.dart';
-import 'package:flutter/material.dart';
 import 'package:santa/games/gift_grab_game.dart';
 
 import '../constants/globals.dart';
@@ -55,18 +54,17 @@ class SantaComponent extends SpriteGroupComponent<MovementState>
       current = MovementState.idle;
       return;
     }
-    debugPrint("Joystick Direction == ${joystick.direction}");
     if (x >= _rightBound) {
-      x = x - 1;
+      x = _rightBound - 1;
     }
     if (x <= _leftBound) {
-      x = x + 1;
+      x = _leftBound + 1;
     }
     if (y >= _downBound) {
-      y = y - 1;
+      y = _downBound - 1;
     }
     if (y <= _upBound) {
-      y = y + 1;
+      y = _upBound + 1;
     }
     bool movingLeft = joystick.relativeDelta[0] < 0;
     if (movingLeft) {
@@ -76,6 +74,5 @@ class SantaComponent extends SpriteGroupComponent<MovementState>
     }
 
     position.add(joystick.relativeDelta * _speed * dt);
-    debugPrint("Position === $position, ${joystick.direction}");
   }
 }

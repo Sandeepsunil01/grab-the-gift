@@ -2,14 +2,14 @@ import 'package:flame/components.dart';
 import 'package:flame/palette.dart';
 import 'package:flutter/cupertino.dart';
 
-JoystickComponent joystick = JoystickComponent(
+final JoystickComponent joystickComponent = JoystickComponent(
   knob: CircleComponent(
-    radius: 30,
+    radius: 25,
     paint: BasicPalette.red.withAlpha(200).paint(),
   ),
   background: CircleComponent(
-    radius: 100,
-    paint: BasicPalette.red.withAlpha(200).paint(),
+    radius: 70,
+    paint: BasicPalette.red.withAlpha(100).paint(),
   ),
-  margin: EdgeInsets.only(left: 40, bottom: 40),
+  margin: const EdgeInsets.only(left: 20, bottom: 20),
 );
