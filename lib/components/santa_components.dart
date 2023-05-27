@@ -1,3 +1,4 @@
+import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:santa/games/gift_grab_game.dart';
 
@@ -10,8 +11,8 @@ enum MovementState {
 }
 
 class SantaComponent extends SpriteGroupComponent<MovementState>
-    with HasGameRef<GiftGrabGame> {
-  final double _spriteHeight = 200;
+    with HasGameRef<GiftGrabGame>, CollisionCallbacks {
+  final double _spriteHeight = 150;
   final double _speed = 500;
   late double _rightBound;
   late double _leftBound;
@@ -45,6 +46,7 @@ class SantaComponent extends SpriteGroupComponent<MovementState>
     height = _spriteHeight;
     width = _spriteHeight * 1.42;
     anchor = Anchor.center;
+    add(CircleComponent());
   }
 
   @override
