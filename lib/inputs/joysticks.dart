@@ -11,5 +11,5 @@ final JoystickComponent joystickComponent = JoystickComponent(
     radius: 70,
     paint: BasicPalette.red.withAlpha(100).paint(),
   ),
-  margin: const EdgeInsets.only(left: 20, bottom: 20),
+  margin: const EdgeInsets.only(left: 1, bottom: 0),
 );
