@@ -3,11 +3,11 @@ import 'dart:math';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flame_audio/flame_audio.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:santa/components/santa_components.dart';
+import 'package:flutter/material.dart';
 import 'package:santa/games/gift_grab_game.dart';
 
 import '../constants/globals.dart';
+import 'santa_components.dart';
 
 class GiftComponents extends SpriteComponent
     with HasGameRef<GiftGrabGame>, CollisionCallbacks {
@@ -27,8 +27,8 @@ class GiftComponents extends SpriteComponent
   @override
   void onCollision(Set<Vector2> intersectionPoints, PositionComponent other) {
     super.onCollision(intersectionPoints, other);
+    debugPrint("Santa Collided with gift");
     if (other is SantaComponent) {
-      debugPrint("Santa Collided with gift");
       FlameAudio.play(Globals.itemGrabSound);
       removeFromParent();
       gameRef.score += 1;

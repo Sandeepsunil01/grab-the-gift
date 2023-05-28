@@ -11,7 +11,7 @@ enum MovementState {
 }
 
 class SantaComponent extends SpriteGroupComponent<MovementState>
-    with HasGameRef<GiftGrabGame>, CollisionCallbacks {
+    with HasGameRef<GiftGrabGame> {
   final double _spriteHeight = 150;
   final double _speed = 500;
   late double _rightBound;
@@ -47,6 +47,7 @@ class SantaComponent extends SpriteGroupComponent<MovementState>
     width = _spriteHeight * 1.42;
     anchor = Anchor.center;
     add(CircleComponent());
+    add(CircleHitbox());
   }
 
   @override
