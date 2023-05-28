@@ -10,7 +10,7 @@ class IceComponent extends SpriteComponent
     with HasGameRef<GiftGrabGame>, CollisionCallbacks {
   final double _spriteHeight = 100.0;
   late Vector2 _velocity;
-  double speed = 150;
+  double speed = 50;
   final double degree = math.pi / 180;
   final Vector2 startPosition;
 
