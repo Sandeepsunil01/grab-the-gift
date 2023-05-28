@@ -43,19 +43,19 @@ class IceComponent extends SpriteComponent
 
     if (other is ScreenHitbox) {
       final Vector2 collisionPoint = intersectionPoints.first;
-      if (collisionPoint.x == 0) {
+      if (collisionPoint.x.toInt() == 0) {
         _velocity.x = -_velocity.x;
         _velocity.y = _velocity.y;
       }
-      if (collisionPoint.x == gameRef.size.x) {
+      if (collisionPoint.x.toInt() == gameRef.size.x.toInt()) {
         _velocity.x = -_velocity.x;
         _velocity.y = _velocity.y;
       }
-      if (collisionPoint.y == 0) {
+      if (collisionPoint.y.toInt() == 0) {
         _velocity.x = _velocity.x;
         _velocity.y = -_velocity.y;
       }
-      if (collisionPoint.y == gameRef.size.y) {
+      if (collisionPoint.y.toInt() == gameRef.size.y.toInt()) {
         _velocity.x = _velocity.x;
         _velocity.y = -_velocity.y;
       }
