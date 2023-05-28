@@ -1,9 +1,12 @@
-import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
-import 'package:santa/games/gift_grab_game.dart';
+
+import 'screens/game_play_menu.dart';
 
 void main() async {
-  runApp(GameWidget(
-    game: GiftGrabGame(),
-  ));
+  runApp(
+    const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: GamePlayMenu(),
+    ),
+  );
 }

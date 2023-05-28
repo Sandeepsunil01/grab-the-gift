@@ -12,6 +12,7 @@ import 'package:santa/components/santa_components.dart';
 import 'package:santa/inputs/joysticks.dart';
 
 import '../constants/globals.dart';
+import '../screens/game_over_menu.dart';
 
 class GiftGrabGame extends FlameGame with HasCollisionDetection {
   int score = 0;
@@ -64,6 +65,7 @@ class GiftGrabGame extends FlameGame with HasCollisionDetection {
     _timer = Timer(1, repeat: true, onTick: () {
       if (_remaining == 0) {
         pauseEngine();
+        overlays.add(GameOverMenu.id);
       } else {
         _remaining -= 1;
       }
@@ -78,5 +80,18 @@ class GiftGrabGame extends FlameGame with HasCollisionDetection {
     _timer.update(dt);
     _scoreText.text = "Score: $score";
     _timeText.text = "Time : $_remaining sec";
+  }
+
+  void resetScore() {
+    score = 0;
+    _remaining = 30;
+  }
+
+  void addMenu(menu) {
+    overlays.add(menu);
+  }
+
+  void removeMenu(menu) {
+    overlays.remove(menu);
   }
 }
