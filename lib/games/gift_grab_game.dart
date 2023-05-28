@@ -25,6 +25,6 @@ class GiftGrabGame extends FlameGame with HasCollisionDetection {
     add(IceComponent(startPosition: Vector2(100, 100)));
     add(IceComponent(startPosition: Vector2(size.x - 100, size.y - 100)));
     add(ScreenHitbox());
-    debugMode = true;
+    // debugMode = true;
   }
 }
